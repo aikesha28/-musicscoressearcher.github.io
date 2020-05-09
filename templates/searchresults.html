@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search results</title>
+</head>
+<body>
+<h2 align="center">Музыкальный поисковик</h2>
+<p align="center">{{ filename }}</p>
+<h3 align="center">Результаты</h3>
+{%if length > 0%}
+<table align="center">
+   <tr>
+    <th>Автор</th>
+    <th>Название</th>
+    <th>Ссылка на нотную запись в MuseScore</th>
+   </tr>
+    {% for result in results %}
+        <tr><td>{{ result.author }}</td><td>{{ result.title }}</td><td> <a href="{{ result.url }}" target="_blank">{{ result.url }}</a> </td></tr>
+    {% endfor %}
+  </table>
+    {% else %}
+    <p align="center">Ничего не найдено</p>
+{% endif %}
+</body>
+</html>
