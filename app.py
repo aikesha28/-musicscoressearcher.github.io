@@ -9,7 +9,7 @@ res = []
 
 @app.route('/')
 def begin():
-    return render_template('main.html')
+    return render_template('index.html')
 
 
 @app.route('/search', methods=['POST'])
